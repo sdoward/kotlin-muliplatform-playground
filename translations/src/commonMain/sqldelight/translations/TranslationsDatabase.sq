@@ -1,0 +1,20 @@
+CREATE TABLE Translations (
+    key TEXT NOT NULL UNIQUE PRIMARY KEY,
+    value TEXT NOT NULL
+);
+
+insertTranslation:
+INSERT INTO Translations(key, value)
+VALUES(?,?);
+
+getTranslation:
+SELECT value
+FROM Translations
+WHERE key = ?;
+
+deleteAll:
+DELETE FROM Translations;
+
+translationsCount:
+SELECT count(*)
+FROM Translations;
